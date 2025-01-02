@@ -45,7 +45,6 @@
                     {
                         Console.WriteLine($"Absent:{fileName}");
                     }
-                    throw new Exception();
                 }
                 catch (Exception ex)
                 {
