@@ -13,7 +13,6 @@ namespace UnitTests
 
             try
             {
-                // Create test files
                 string file1 = Path.Combine(testFolderPath, "testfile1.txt");
                 string file2 = Path.Combine(testFolderPath, "testfile2.txt");
                 string file3 = Path.Combine(testFolderPath, "testfile3.txt");
@@ -22,7 +21,7 @@ namespace UnitTests
                 File.WriteAllText(file2, "This file does not contain it.");
                 File.WriteAllText(file3, "Another example with the search string.");
 
-                string searchString = "search string";
+                string searchString = "SEARCH string";
                 var fileScanner = new FileScanner(testFolderPath, searchString);
 
                 // Act
@@ -40,7 +39,6 @@ namespace UnitTests
             }
             finally
             {
-                // Clean up test files and folder
                 if (Directory.Exists(testFolderPath))
                     Directory.Delete(testFolderPath, true);
             }
@@ -95,7 +93,6 @@ namespace UnitTests
             }
             finally
             {
-                // Clean up test folder
                 if (Directory.Exists(emptyFolderPath))
                     Directory.Delete(emptyFolderPath, true);
             }
